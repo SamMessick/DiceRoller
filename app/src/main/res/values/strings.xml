@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Dice Roller</string>
+    <string name="toss">Toss Items</string>
+    <string name="add_coin">Add Coin</string>
+    <string name="remove_coin">Remove Coin</string>
+    <string name="remove_die">Remove Die</string>
+    <string name="add_die">Add Die</string>
+    <string name="requestToAddTossableItems">Please add something to flip</string>
+    <string name="toss_items">Toss Items</string>
+    <string name="lucky_toss">Lucky Toss</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
