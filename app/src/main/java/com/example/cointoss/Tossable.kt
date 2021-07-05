@@ -1,4 +1,4 @@
-package com.example.diceroller
+package com.example.cointoss
 
 /**
  * Interface for a tossable object with a number of random outcomes determined by sides

@@ -1,16 +1,17 @@
-package com.example.diceroller
+package com.example.cointoss
 
 import android.os.Bundle
-import android.view.*
-import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
-import com.example.diceroller.databinding.ActivityMainBinding
-import com.example.diceroller.databinding.FragmentTossItemsBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.fragment.app.Fragment
+import cointoss.R
+import cointoss.databinding.FragmentTossItemsBinding
 
 
 /**
- * # Package com.example.diceroller
+ * # Package com.example.cointoss
  * A simple [Fragment] subclass.
  */
 class TossItemsFragment : Fragment() {
@@ -18,29 +19,13 @@ class TossItemsFragment : Fragment() {
     private lateinit var binding: FragmentTossItemsBinding
     private var tossables: MutableList<Tossable> = mutableListOf()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
-    /**
-     * ## onCreateOptionsMenu
-     * Creates the [BottomNavigationView] for the fragment
-     * @param menu the [Menu] to be presented in the bottom app bar
-     * @param inflater the [Inflater] used to inflate the bottom app bar
-     */
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.bottom_navigation_items, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentTossItemsBinding.inflate(layoutInflater)
-        return binding.getRoot()
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -66,12 +51,11 @@ class TossItemsFragment : Fragment() {
 
         // Roll the dice; creates a roll result string in rollResults
         for (tossable in tossables) {
-            var separator = " "
 
             // Determine the separator needed for the roll result
-            when (tossable) {
-                tossables.last() -> separator = "" // comma delimited
-                else -> separator = ", "          // No separator needed for last die
+            val separator: String = when (tossable) {
+                tossables.last() -> "" // comma delimited
+                else -> ", "          // No separator needed for last die
             }
 
             // Append the roll result with separator to the other results
@@ -79,10 +63,8 @@ class TossItemsFragment : Fragment() {
         }
 
         // Set the results or a warning to add tossables to the MainActivity's view
-        if (rollResults.isEmpty()) binding.textView.text =
+        if (rollResults.isEmpty()) binding.resultTextView.text =
             getString(R.string.requestToAddTossableItems)
-        else binding.textView.text = rollResults
-
-        Toast.makeText(requireContext(), "Items tossed!", Toast.LENGTH_SHORT).show()
+        else binding.resultTextView.text = rollResults
     }
 }

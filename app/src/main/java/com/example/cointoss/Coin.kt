@@ -1,4 +1,4 @@
-package com.example.diceroller
+package com.example.cointoss
 
 /**
  * Coin class. Can be flipped and return a flip result

@@ -1,4 +1,4 @@
-package com.example.diceroller
+package com.example.cointoss
 
 /**
  * Dice class. Can be rolled and return a roll result.

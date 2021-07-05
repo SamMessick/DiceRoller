@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/tossItemsFragment"
-        android:name="com.example.diceroller.TossItemsFragment"
+        android:name="com.example.cointoss.TossItemsFragment"
         android:label="fragment_toss_items"
         tools:layout="@layout/fragment_toss_items" />
     <fragment
         android:id="@+id/luckyTossFragment"
-        android:name="com.example.diceroller.LuckyTossFragment"
+        android:name="com.example.cointoss.LuckyTossFragment"
         android:label="fragment_lucky_toss"
         tools:layout="@layout/fragment_lucky_toss" />
 </navigation>
