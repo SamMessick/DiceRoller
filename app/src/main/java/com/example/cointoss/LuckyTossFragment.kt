@@ -33,8 +33,10 @@ class LuckyTossFragment : Fragment() {
 
         // Set up Die toss button behavior
         binding.tossButton.setOnClickListener {
+            // Toss the die
             val rollString: String = tossable.toss()
 
+            // Update the drawable resource based on the roll
             val drawableRes = when (rollString) {
                 "1" -> R.drawable.dice_1
                 "2" -> R.drawable.dice_2
@@ -45,16 +47,17 @@ class LuckyTossFragment : Fragment() {
                 else -> null
             }
 
-            if (drawableRes == null) {
+            if (drawableRes == null) { // Hide the drawable if we rolled an illegal number
                 binding.dieImageView.visibility = INVISIBLE
             } else {
-                binding.dieImageView.apply {
+                binding.dieImageView.apply { // Otherwise, update the resource and contentDescription
                     visibility = VISIBLE
                     setImageResource(drawableRes)
                     contentDescription = rollString
                 }
             }
 
+            // Tell the user something about their roll
             binding.userMessageTextView.text = when (rollString) {
                 luckyNumber -> "You got the lucky number!"
                 "1" -> "Nice try, but you'll get it next time."

@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
 
-        app:navGraph="@navigation/navgraph"
+        app:navGraph="@navigation/bottom_nav_graph"
         app:defaultNavHost="true" />
 
 

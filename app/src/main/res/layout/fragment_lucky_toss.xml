@@ -46,6 +46,7 @@
         android:adjustViewBounds="false"
         android:cropToPadding="false"
         android:paddingBottom="16dp"
+        android:src="@drawable/dice_1"
         app:layout_constraintBottom_toTopOf="@id/tossButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

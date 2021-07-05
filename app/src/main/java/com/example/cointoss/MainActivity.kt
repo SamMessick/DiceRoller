@@ -20,14 +20,17 @@ class MainActivity : AppCompatActivity() {
         setupBottomNavigation()
     }
 
+    /**
+     * Sets up bottom navigation bar using the fragments in bottom_navigation_items menu
+     */
     fun setupBottomNavigation()
     {
-        // Finding the Navigation Controller
+        // Find the NavController for our NavHostFragment
         val navigationHost =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navigationHost.navController
 
-        // Setting Navigation Controller with the BottomNavigationView
+        // Enable the bottom navigation view to navigate
         binding.bottomNavigationView.setupWithNavController(navController)
     }
 }
