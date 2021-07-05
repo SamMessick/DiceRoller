@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Dice Roller</string>
+    <string name="app_name">Coin Toss</string>
     <string name="toss">Toss Items</string>
     <string name="add_coin">Add Coin</string>
     <string name="remove_coin">Remove Coin</string>
