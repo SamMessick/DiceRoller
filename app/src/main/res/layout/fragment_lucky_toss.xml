@@ -7,16 +7,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.cointoss.LuckyTossFragment">
 
-    <TextView
-        android:id="@+id/resultTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="16dp"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/tossButton"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:text="1" />
+
 
     <Button
         android:id="@+id/tossButton"
@@ -26,7 +17,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultTextView"
+        app:layout_constraintTop_toBottomOf="@+id/dieImageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -46,5 +37,19 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         tools:text="1" />
+
+    <ImageView
+        android:id="@+id/dieImageView"
+        android:layout_width="160dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="16dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:paddingBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/tossButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@drawable/dice_1"
+        android:contentDescription="@string/none" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
